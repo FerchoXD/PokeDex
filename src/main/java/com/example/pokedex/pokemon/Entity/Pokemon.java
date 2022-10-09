@@ -1,5 +1,7 @@
 package com.example.pokedex.pokemon.Entity;
 
+import com.example.pokedex.Entrenador.Entity.Entrenador;
+import com.example.pokedex.Pokebola.Entity.Pokebola;
 import com.example.pokedex.pivots.PokemonsHabilidad;
 import lombok.Getter;
 import lombok.Setter;
@@ -19,7 +21,13 @@ public class Pokemon {
     private String Tipo;
     private String Color;
 
+    @OneToOne(mappedBy = "pokemon")
+    @PrimaryKeyJoinColumn
+    private Pokebola pokebola;
+
     @OneToMany(mappedBy = "pokemon")
     private List<PokemonsHabilidad> pokemonsHabilidades;
 
+    @ManyToOne
+    private Entrenador entrenador_of_pokemon;
 }
