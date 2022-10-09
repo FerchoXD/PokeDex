@@ -1,6 +1,6 @@
-package com.example.pokedex.pokemones.Repository;
+package com.example.pokedex.pokemon.Repository;
 
-import com.example.pokedex.pokemones.Entity.Pokemon;
+import com.example.pokedex.pokemon.Entity.Pokemon;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

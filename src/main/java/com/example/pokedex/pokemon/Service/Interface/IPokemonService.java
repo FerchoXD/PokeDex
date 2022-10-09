@@ -1,10 +1,10 @@
-package com.example.pokedex.pokemones.Service.Interface;
+package com.example.pokedex.pokemon.Service.Interface;
 
-import com.example.pokedex.pokemones.Controllers.dtos.request.CreatePokemonRequest;
-import com.example.pokedex.pokemones.Controllers.dtos.request.UpdatePokemonRequest;
-import com.example.pokedex.pokemones.Controllers.dtos.response.CreatePokemonResponse;
-import com.example.pokedex.pokemones.Controllers.dtos.response.GetPokemonResponse;
-import com.example.pokedex.pokemones.Controllers.dtos.response.UpdatePokemonResponse;
+import com.example.pokedex.pokemon.Controller.dtos.request.CreatePokemonRequest;
+import com.example.pokedex.pokemon.Controller.dtos.request.UpdatePokemonRequest;
+import com.example.pokedex.pokemon.Controller.dtos.response.CreatePokemonResponse;
+import com.example.pokedex.pokemon.Controller.dtos.response.GetPokemonResponse;
+import com.example.pokedex.pokemon.Controller.dtos.response.UpdatePokemonResponse;
 
 import java.util.List;
 

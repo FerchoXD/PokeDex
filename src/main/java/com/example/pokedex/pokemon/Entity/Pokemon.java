@@ -1,4 +1,4 @@
-package com.example.pokedex.pokemones.Entity;
+package com.example.pokedex.pokemon.Entity;
 
 import lombok.Getter;
 import lombok.Setter;

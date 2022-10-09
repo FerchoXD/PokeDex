@@ -1,13 +1,13 @@
-package com.example.pokedex.pokemones.Service;
+package com.example.pokedex.pokemon.Service;
 
-import com.example.pokedex.pokemones.Controllers.dtos.request.CreatePokemonRequest;
-import com.example.pokedex.pokemones.Controllers.dtos.request.UpdatePokemonRequest;
-import com.example.pokedex.pokemones.Controllers.dtos.response.CreatePokemonResponse;
-import com.example.pokedex.pokemones.Controllers.dtos.response.GetPokemonResponse;
-import com.example.pokedex.pokemones.Controllers.dtos.response.UpdatePokemonResponse;
-import com.example.pokedex.pokemones.Entity.Pokemon;
-import com.example.pokedex.pokemones.Repository.IPokemonRepository;
-import com.example.pokedex.pokemones.Service.Interface.IPokemonService;
+import com.example.pokedex.pokemon.Controller.dtos.request.CreatePokemonRequest;
+import com.example.pokedex.pokemon.Controller.dtos.request.UpdatePokemonRequest;
+import com.example.pokedex.pokemon.Controller.dtos.response.CreatePokemonResponse;
+import com.example.pokedex.pokemon.Controller.dtos.response.GetPokemonResponse;
+import com.example.pokedex.pokemon.Controller.dtos.response.UpdatePokemonResponse;
+import com.example.pokedex.pokemon.Entity.Pokemon;
+import com.example.pokedex.pokemon.Repository.IPokemonRepository;
+import com.example.pokedex.pokemon.Service.Interface.IPokemonService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

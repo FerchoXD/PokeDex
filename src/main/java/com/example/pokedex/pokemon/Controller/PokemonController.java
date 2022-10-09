@@ -1,12 +1,11 @@
-package com.example.pokedex.pokemones.Controllers.dtos;
+package com.example.pokedex.pokemon.Controller;
 
-import com.example.pokedex.pokemones.Controllers.dtos.request.CreatePokemonRequest;
-import com.example.pokedex.pokemones.Controllers.dtos.request.UpdatePokemonRequest;
-import com.example.pokedex.pokemones.Controllers.dtos.response.CreatePokemonResponse;
-import com.example.pokedex.pokemones.Controllers.dtos.response.GetPokemonResponse;
-import com.example.pokedex.pokemones.Controllers.dtos.response.UpdatePokemonResponse;
-import com.example.pokedex.pokemones.Service.ServicePokemonImpl;
-import lombok.Getter;
+import com.example.pokedex.pokemon.Controller.dtos.request.CreatePokemonRequest;
+import com.example.pokedex.pokemon.Controller.dtos.request.UpdatePokemonRequest;
+import com.example.pokedex.pokemon.Controller.dtos.response.CreatePokemonResponse;
+import com.example.pokedex.pokemon.Controller.dtos.response.GetPokemonResponse;
+import com.example.pokedex.pokemon.Controller.dtos.response.UpdatePokemonResponse;
+import com.example.pokedex.pokemon.Service.ServicePokemonImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

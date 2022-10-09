@@ -1,10 +1,9 @@
-package com.example.pokedex.pokemones.Controllers.dtos.response;
-
+package com.example.pokedex.pokemon.Controller.dtos.response;
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter @Setter
-public class GetPokemonResponse {
+public class CreatePokemonResponse {
     private Long id_Pokemon;
     private String nombre;
     private String Especie;
