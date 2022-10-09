@@ -11,7 +11,7 @@ import javax.persistence.*;
 public class Liga {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id_Liga;
+    private Long id;
     private String nombre;
     private String region;
     private String limitepokemon;

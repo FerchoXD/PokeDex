@@ -21,8 +21,8 @@ public class ServicePokemonImpl implements IPokemonService {
 
 
     @Override
-    public GetPokemonResponse get(Long id_Pokemon) {
-        Pokemon pokemon = find(id_Pokemon);
+    public GetPokemonResponse get(Long id) {
+        Pokemon pokemon = find(id);
         return from(pokemon);
     }
 
@@ -38,8 +38,8 @@ public class ServicePokemonImpl implements IPokemonService {
     }
 
     @Override
-    public UpdatePokemonResponse update(UpdatePokemonRequest request, Long id_Pokemon) {
-        Pokemon pokemon = find(id_Pokemon);
+    public UpdatePokemonResponse update(UpdatePokemonRequest request, Long id) {
+        Pokemon pokemon = find(id);
         pokemon.setNombre(request.getNombre());
         pokemon.setEspecie(request.getEspecie());
         pokemon.setTipo(request.getTipo());
@@ -54,13 +54,13 @@ public class ServicePokemonImpl implements IPokemonService {
     }
 
     @Override
-    public void delete(Long id_pokemon) {
-        repository.deleteById(id_pokemon);
+    public void delete(Long id) {
+        repository.deleteById(id);
     }
 
     public CreatePokemonResponse to(Pokemon pokemon) {
         CreatePokemonResponse response = new CreatePokemonResponse();
-        response.setId_Pokemon(pokemon.getId_Pokemon());
+        response.setId(pokemon.getId());
         response.setNombre(pokemon.getNombre());
         response.setEspecie(pokemon.getEspecie());
         response.setTipo(pokemon.getTipo());
@@ -70,7 +70,7 @@ public class ServicePokemonImpl implements IPokemonService {
 
     public GetPokemonResponse from(Pokemon pokemon) {
         GetPokemonResponse response = new GetPokemonResponse();
-        response.setId_Pokemon(pokemon.getId_Pokemon());
+        response.setId(pokemon.getId());
         response.setTipo(pokemon.getTipo());
         response.setEspecie(pokemon.getEspecie());
         response.setNombre(pokemon.getNombre());
@@ -80,14 +80,14 @@ public class ServicePokemonImpl implements IPokemonService {
 
     public UpdatePokemonResponse fromUpdate(Pokemon pokemon) {
         UpdatePokemonResponse response = new UpdatePokemonResponse();
-        response.setId_Pokemon(pokemon.getId_Pokemon());
+        response.setId(pokemon.getId());
         response.setNombre(pokemon.getNombre());
         response.setTipo(pokemon.getTipo());
         response.setEspecie(pokemon.getEspecie());
         response.setColor(pokemon.getColor());
         return response;
     }
-    public Pokemon find(Long id_Pokemon){
-        return  repository.findById(id_Pokemon).orElseThrow(()->new RuntimeException("no se encpontro"));
+    public Pokemon find(Long id){
+        return  repository.findById(id).orElseThrow(()->new RuntimeException("no se encpontro"));
     }
 }

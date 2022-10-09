@@ -5,7 +5,7 @@ import lombok.Setter;
 
 @Getter @Setter
 public class GetEntrenadorResponse {
-    private Long id_Entrenador;
+    private Long id;
     private String nombre;
     private String edad;
     private String nacionalidad;

@@ -17,9 +17,9 @@ public class PokebolaController {
     @Autowired
     private ServicePokebolaImpl service;
 
-    @GetMapping("{id_Pokebola}")
-    public GetPokebolaResponse get(@PathVariable Long id_Pokebola){
-        return service.get(id_Pokebola);
+    @GetMapping("{id}")
+    public GetPokebolaResponse get(@PathVariable Long id){
+        return service.get(id);
     }
 
     @PostMapping
@@ -27,9 +27,9 @@ public class PokebolaController {
         return service.create(request);
     }
 
-    @PutMapping("{id_Pokebola}")
-    public UpdatePokebolaResponse update(@RequestBody UpdatePokebolaRequest request, @PathVariable Long id_Pokebola){
-        return service.update(request, id_Pokebola);
+    @PutMapping("{id}")
+    public UpdatePokebolaResponse update(@RequestBody UpdatePokebolaRequest request, @PathVariable Long id){
+        return service.update(request, id);
     }
 
     @GetMapping
@@ -37,9 +37,9 @@ public class PokebolaController {
         return service.list();
     }
 
-    @DeleteMapping("{id_Pokebola}")
-    public void delete(@PathVariable Long id_Pokebola){
-        service.delete(id_Pokebola);
+    @DeleteMapping("{id}")
+    public void delete(@PathVariable Long id){
+        service.delete(id);
     }
 
 }

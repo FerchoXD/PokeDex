@@ -4,7 +4,7 @@ import lombok.Setter;
 
 @Getter @Setter
 public class UpdateHabilidadResponse {
-    private Long id_Habilidad;
+    private Long id;
     private String nombre;
     private String efecto;
     private String tipo;

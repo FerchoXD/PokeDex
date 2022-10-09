@@ -16,9 +16,9 @@ import java.util.List;
 public class PokemonController {
     @Autowired
     private ServicePokemonImpl service;
-    @GetMapping("{id_Pokemon}")
-    public GetPokemonResponse get(@PathVariable Long id_Pokemon){
-        return service.get(id_Pokemon);
+    @GetMapping("{id}")
+    public GetPokemonResponse get(@PathVariable Long id){
+        return service.get(id);
     }
 
     @PostMapping
@@ -26,9 +26,9 @@ public class PokemonController {
         return service.create(request);
     }
 
-    @PutMapping("{id_Pokemon}")
-    public UpdatePokemonResponse update(@RequestBody UpdatePokemonRequest request,@PathVariable Long id_Pokemon){
-        return service.update(request,id_Pokemon);
+    @PutMapping("{id}")
+    public UpdatePokemonResponse update(@RequestBody UpdatePokemonRequest request,@PathVariable Long id){
+        return service.update(request, id);
     }
 
     @GetMapping
@@ -36,8 +36,8 @@ public class PokemonController {
         return service.list();
     }
 
-    @DeleteMapping("{id_Pokemon}")
-    public void delete(@PathVariable Long id_Pokemon){
-        service.delete(id_Pokemon);
+    @DeleteMapping("{id}")
+    public void delete(@PathVariable Long id){
+        service.delete(id);
     }
 }

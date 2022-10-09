@@ -11,7 +11,7 @@ import javax.persistence.*;
 public class Entrenador {
     @Id
     @GeneratedValue (strategy = GenerationType.IDENTITY)
-    private Long id_Entrenador;
+    private Long id;
     private String nombre;
     private String edad;
     private String nacionalidad;

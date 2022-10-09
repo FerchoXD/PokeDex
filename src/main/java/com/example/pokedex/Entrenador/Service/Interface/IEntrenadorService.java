@@ -9,13 +9,13 @@ import com.example.pokedex.Entrenador.controller.dtos.response.UpdateEntrenadorR
 import java.util.List;
 
 public interface IEntrenadorService {
-    GetEntrenadorResponse get(Long id_Entrenador);
+    GetEntrenadorResponse get(Long id);
 
     CreateEntrenadorResponse create(CreateEntrenadorRequest request);
 
-    UpdateEntrenadorResponse update(UpdateEntrenadorRequest request, Long id_Entrenador);
+    UpdateEntrenadorResponse update(UpdateEntrenadorRequest request, Long id);
 
     List<GetEntrenadorResponse> list();
 
-    void delete(Long id_Entrenador);
+    void delete(Long id);
 }

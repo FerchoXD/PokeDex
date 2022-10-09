@@ -16,9 +16,9 @@ import java.util.List;
 public class HabilidadController {
     @Autowired
     private ServiceHabilidadImpl service;
-    @GetMapping("{id_Habilidad}")
-    public GetHabilidadResponse get(@PathVariable Long id_Habilidad){
-        return service.get(id_Habilidad);
+    @GetMapping("{id}")
+    public GetHabilidadResponse get(@PathVariable Long id){
+        return service.get(id);
     }
 
     @PostMapping
@@ -26,9 +26,9 @@ public class HabilidadController {
         return service.create(request);
     }
 
-    @PutMapping("{id_Habilidad}")
-    public UpdateHabilidadResponse update(@RequestBody UpdateHabilidadRequest request, @PathVariable Long id_Habilidad){
-        return service.update(request, id_Habilidad);
+    @PutMapping("{id}")
+    public UpdateHabilidadResponse update(@RequestBody UpdateHabilidadRequest request, @PathVariable Long id){
+        return service.update(request, id);
     }
 
     @GetMapping
@@ -36,8 +36,8 @@ public class HabilidadController {
         return service.list();
     }
 
-    @DeleteMapping("{id_Habilidad}")
-    public void delete(@PathVariable Long id_Habilidad){
-        service.delete(id_Habilidad);
+    @DeleteMapping("{id}")
+    public void delete(@PathVariable Long id){
+        service.delete(id);
     }
 }

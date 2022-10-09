@@ -17,9 +17,9 @@ public class LigaController {
     @Autowired
     private ServiceLigaImpl service;
 
-    @GetMapping("{id_Liga}")
-    public GetLigaResponse get(@PathVariable Long id_Liga){
-        return service.get(id_Liga);
+    @GetMapping("{id}")
+    public GetLigaResponse get(@PathVariable Long id){
+        return service.get(id);
     }
 
     @PostMapping
@@ -27,9 +27,9 @@ public class LigaController {
         return service.create(request);
     }
 
-    @PutMapping("{id_Liga}")
-    public UpdateLigaResponse update(@RequestBody UpdateLigaRequest request, @PathVariable Long id_Liga){
-        return service.update(request, id_Liga);
+    @PutMapping("{id}")
+    public UpdateLigaResponse update(@RequestBody UpdateLigaRequest request, @PathVariable Long id){
+        return service.update(request, id);
     }
 
     @GetMapping
@@ -37,9 +37,9 @@ public class LigaController {
         return service.list();
     }
 
-    @DeleteMapping("{id_Liga}")
-    public void delete(@PathVariable Long id_Liga){
-        service.delete(id_Liga);
+    @DeleteMapping("{id}")
+    public void delete(@PathVariable Long id){
+        service.delete(id);
     }
 
 }

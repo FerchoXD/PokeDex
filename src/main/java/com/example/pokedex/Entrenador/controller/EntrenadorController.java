@@ -16,9 +16,9 @@ import java.util.List;
 public class EntrenadorController {
     @Autowired
     private ServiceEntrenadorImpl service;
-    @GetMapping("{id_Entrenador}")
-    public GetEntrenadorResponse get(@PathVariable Long id_Entrenador){
-        return service.get(id_Entrenador);
+    @GetMapping("{id}")
+    public GetEntrenadorResponse get(@PathVariable Long id){
+        return service.get(id);
     }
 
     @PostMapping
@@ -26,9 +26,9 @@ public class EntrenadorController {
         return service.create(request);
     }
 
-    @PutMapping("{id_Entrenador}")
-    public UpdateEntrenadorResponse update(@RequestBody UpdateEntrenadorRequest request, @PathVariable Long id_Entrenador){
-        return service.update(request, id_Entrenador);
+    @PutMapping("{id}")
+    public UpdateEntrenadorResponse update(@RequestBody UpdateEntrenadorRequest request, @PathVariable Long id){
+        return service.update(request, id);
     }
 
     @GetMapping
@@ -36,8 +36,8 @@ public class EntrenadorController {
         return service.list();
     }
 
-    @DeleteMapping("{id_Entrenador}")
-    public void delete(@PathVariable Long id_Entrenador){
-        service.delete(id_Entrenador);
+    @DeleteMapping("{id}")
+    public void delete(@PathVariable Long id){
+        service.delete(id);
     }
 }

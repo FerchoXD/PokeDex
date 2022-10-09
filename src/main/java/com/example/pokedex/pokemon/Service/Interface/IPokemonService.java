@@ -9,13 +9,13 @@ import com.example.pokedex.pokemon.Controller.dtos.response.UpdatePokemonRespons
 import java.util.List;
 
 public interface IPokemonService {
-    GetPokemonResponse get(Long id_Pokemon);
+    GetPokemonResponse get(Long id);
 
     CreatePokemonResponse create(CreatePokemonRequest request);
 
-    UpdatePokemonResponse update(UpdatePokemonRequest request, Long id_Pokemon);
+    UpdatePokemonResponse update(UpdatePokemonRequest request, Long id);
 
     List<GetPokemonResponse> list();
 
-    void delete(Long id_pokemon);
+    void delete(Long id);
 }

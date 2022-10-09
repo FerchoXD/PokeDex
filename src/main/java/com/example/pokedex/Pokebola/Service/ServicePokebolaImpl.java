@@ -21,8 +21,8 @@ public class ServicePokebolaImpl implements IPokebolaService {
 
 
     @Override
-    public GetPokebolaResponse get(Long id_Pokebola) {
-        Pokebola pokebola = find(id_Pokebola);
+    public GetPokebolaResponse get(Long id) {
+        Pokebola pokebola = find(id);
         return from(pokebola);
     }
 
@@ -38,8 +38,8 @@ public class ServicePokebolaImpl implements IPokebolaService {
 
 
     @Override
-    public UpdatePokebolaResponse update(UpdatePokebolaRequest request, Long id_Pokebola) {
-        Pokebola pokebola = find(id_Pokebola);
+    public UpdatePokebolaResponse update(UpdatePokebolaRequest request, Long id) {
+        Pokebola pokebola = find(id);
         pokebola.setNombre(request.getNombre());
         pokebola.setNivel(request.getNivel());
         pokebola.setColor(request.getColor());
@@ -53,13 +53,13 @@ public class ServicePokebolaImpl implements IPokebolaService {
     }
 
     @Override
-    public void delete(Long id_Pokebola) {
-        repository.deleteById(id_Pokebola);
+    public void delete(Long id) {
+        repository.deleteById(id);
     }
 
     public GetPokebolaResponse from(Pokebola pokebola) {
         GetPokebolaResponse response = new GetPokebolaResponse();
-        response.setId_Pokebola(pokebola.getId_Pokebola());
+        response.setId(pokebola.getId());
         response.setNombre(pokebola.getNombre());
         response.setNivel(pokebola.getNivel());
         response.setColor(pokebola.getColor());
@@ -68,7 +68,7 @@ public class ServicePokebolaImpl implements IPokebolaService {
 
     public CreatePokebolaResponse to(Pokebola pokebola) {
         CreatePokebolaResponse response = new CreatePokebolaResponse();
-        response.setId_Pokebola(pokebola.getId_Pokebola());
+        response.setId(pokebola.getId());
         response.setNombre(pokebola.getNombre());
         response.setNivel(pokebola.getNivel());
         response.setColor(pokebola.getColor());
@@ -77,13 +77,13 @@ public class ServicePokebolaImpl implements IPokebolaService {
 
     public UpdatePokebolaResponse fromUpdate(Pokebola pokebola) {
         UpdatePokebolaResponse response = new UpdatePokebolaResponse();
-        response.setId_Pokebola(pokebola.getId_Pokebola());
+        response.setId(pokebola.getId());
         response.setNombre(pokebola.getNombre());
         response.setNivel(pokebola.getNivel());
         response.setColor(pokebola.getColor());
         return response;
     }
-    public Pokebola find(Long id_Pokebola){
-        return  repository.findById(id_Pokebola).orElseThrow(()->new RuntimeException("no se encpontro"));
+    public Pokebola find(Long id){
+        return  repository.findById(id).orElseThrow(()->new RuntimeException("no se encpontro"));
     }
 }

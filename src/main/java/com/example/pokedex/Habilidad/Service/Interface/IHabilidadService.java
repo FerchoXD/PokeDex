@@ -9,13 +9,13 @@ import com.example.pokedex.Habilidad.controller.dtos.request.UpdateHabilidadRequ
 import java.util.List;
 
 public interface IHabilidadService {
-    GetHabilidadResponse get(Long id_Habilidad);
+    GetHabilidadResponse get(Long id);
 
     CreateHabilidadResponse create(CreateHabilidadRequest request);
 
-    UpdateHabilidadResponse update(UpdateHabilidadRequest request, Long id_Habilidad);
+    UpdateHabilidadResponse update(UpdateHabilidadRequest request, Long id);
 
     List<GetHabilidadResponse> list();
 
-    void delete(Long id_Habilidad);
+    void delete(Long id);
 }

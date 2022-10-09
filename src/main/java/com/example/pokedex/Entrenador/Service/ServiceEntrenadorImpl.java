@@ -21,8 +21,8 @@ public class ServiceEntrenadorImpl implements IEntrenadorService {
 
 
     @Override
-    public GetEntrenadorResponse get(Long id_Entrenador) {
-        Entrenador entrenador = find(id_Entrenador);
+    public GetEntrenadorResponse get(Long id) {
+        Entrenador entrenador = find(id);
         return from(entrenador);
     }
 
@@ -37,8 +37,8 @@ public class ServiceEntrenadorImpl implements IEntrenadorService {
     }
 
     @Override
-    public UpdateEntrenadorResponse update(UpdateEntrenadorRequest request, Long id_Entrenador) {
-        Entrenador entrenador = find(id_Entrenador);
+    public UpdateEntrenadorResponse update(UpdateEntrenadorRequest request, Long id) {
+        Entrenador entrenador = find(id);
         entrenador.setNombre(request.getNombre());
         entrenador.setEdad(request.getEdad());
         entrenador.setNacionalidad(request.getNacionalidad());
@@ -52,13 +52,13 @@ public class ServiceEntrenadorImpl implements IEntrenadorService {
     }
 
     @Override
-    public void delete(Long id_Entrenador) {
-        repository.deleteById(id_Entrenador);
+    public void delete(Long id) {
+        repository.deleteById(id);
     }
 
     public CreateEntrenadorResponse to(Entrenador entrenador) {
         CreateEntrenadorResponse response = new CreateEntrenadorResponse();
-        response.setId_Entrenador(entrenador.getId_Entrenador());
+        response.setId(entrenador.getId());
         response.setNombre(entrenador.getNombre());
         response.setEdad(entrenador.getEdad());
         response.setNacionalidad(entrenador.getNacionalidad());
@@ -67,7 +67,7 @@ public class ServiceEntrenadorImpl implements IEntrenadorService {
 
     public GetEntrenadorResponse from(Entrenador entrenador) {
         GetEntrenadorResponse response = new GetEntrenadorResponse();
-        response.setId_Entrenador(entrenador.getId_Entrenador());
+        response.setId(entrenador.getId());
         response.setNombre(entrenador.getNombre());
         response.setNacionalidad(entrenador.getNacionalidad());
         response.setEdad(entrenador.getEdad());
@@ -76,13 +76,13 @@ public class ServiceEntrenadorImpl implements IEntrenadorService {
 
     public UpdateEntrenadorResponse fromUpdate(Entrenador entrenador) {
         UpdateEntrenadorResponse response = new UpdateEntrenadorResponse();
-        response.setId_Entrenador(entrenador.getId_Entrenador());
+        response.setId(entrenador.getId());
         response.setNombre(entrenador.getNombre());
         response.setNacionalidad(entrenador.getNacionalidad());
         response.setEdad(entrenador.getEdad());
         return response;
     }
-    public Entrenador find(Long id_Entrenador){
-        return  repository.findById(id_Entrenador).orElseThrow(()->new RuntimeException("no se encpontro"));
+    public Entrenador find(Long id){
+        return  repository.findById(id).orElseThrow(()->new RuntimeException("no se encpontro"));
     }
 }

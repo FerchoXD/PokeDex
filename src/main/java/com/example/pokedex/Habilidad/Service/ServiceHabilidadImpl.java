@@ -21,8 +21,8 @@ public class ServiceHabilidadImpl implements IHabilidadService {
 
 
     @Override
-    public GetHabilidadResponse get(Long id_Habilidad) {
-        Habilidad habilidad = find(id_Habilidad);
+    public GetHabilidadResponse get(Long id) {
+        Habilidad habilidad = find(id);
         return from(habilidad);
     }
 
@@ -37,8 +37,8 @@ public class ServiceHabilidadImpl implements IHabilidadService {
     }
 
     @Override
-    public UpdateHabilidadResponse update(UpdateHabilidadRequest request, Long id_Habilidad) {
-        Habilidad habilidad = find(id_Habilidad);
+    public UpdateHabilidadResponse update(UpdateHabilidadRequest request, Long id) {
+        Habilidad habilidad = find(id);
         habilidad.setNombre(request.getNombre());
         habilidad.setEfecto(request.getEfecto());
         habilidad.setTipo(request.getTipo());
@@ -52,13 +52,13 @@ public class ServiceHabilidadImpl implements IHabilidadService {
     }
 
     @Override
-    public void delete(Long id_Habilidad) {
-        repository.deleteById(id_Habilidad);
+    public void delete(Long id) {
+        repository.deleteById(id);
     }
 
     public CreateHabilidadResponse to(Habilidad habilidad) {
         CreateHabilidadResponse response = new CreateHabilidadResponse();
-        response.setId_Habilidad(habilidad.getId_Habilidad());
+        response.setId(habilidad.getId());
         response.setNombre(habilidad.getNombre());
         response.setEfecto(habilidad.getEfecto());
         response.setTipo(habilidad.getTipo());
@@ -67,7 +67,7 @@ public class ServiceHabilidadImpl implements IHabilidadService {
 
     public GetHabilidadResponse from(Habilidad habilidad) {
         GetHabilidadResponse response = new GetHabilidadResponse();
-        response.setId_Habilidad(habilidad.getId_Habilidad());
+        response.setId(habilidad.getId());
         response.setNombre(habilidad.getNombre());
         response.setTipo(habilidad.getTipo());
         response.setEfecto(habilidad.getEfecto());
@@ -76,13 +76,13 @@ public class ServiceHabilidadImpl implements IHabilidadService {
 
     public UpdateHabilidadResponse fromUpdate(Habilidad habilidad) {
         UpdateHabilidadResponse response = new UpdateHabilidadResponse();
-        response.setId_Habilidad(habilidad.getId_Habilidad());
+        response.setId(habilidad.getId());
         response.setNombre(habilidad.getNombre());
         response.setTipo(habilidad.getTipo());
         response.setEfecto(habilidad.getEfecto());
         return response;
     }
-    public Habilidad find(Long id_Habilidad){
-        return  repository.findById(id_Habilidad).orElseThrow(()->new RuntimeException("no se encpontro"));
+    public Habilidad find(Long id){
+        return  repository.findById(id).orElseThrow(()->new RuntimeException("no se encpontro"));
     }
 }

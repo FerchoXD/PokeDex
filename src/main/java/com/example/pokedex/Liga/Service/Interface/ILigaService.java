@@ -9,13 +9,13 @@ import com.example.pokedex.Liga.Controller.dtos.Response.UpdateLigaResponse;
 import java.util.List;
 
 public interface ILigaService {
-    GetLigaResponse get(Long id_liga);
+    GetLigaResponse get(Long id);
 
     CreateLigaResponse create(CreateLigaRequest request);
 
-    UpdateLigaResponse update(UpdateLigaRequest request, Long id_liga);
+    UpdateLigaResponse update(UpdateLigaRequest request, Long id);
 
     List<GetLigaResponse> list();
 
-    void delete(Long id_liga);
+    void delete(Long id);
 }
