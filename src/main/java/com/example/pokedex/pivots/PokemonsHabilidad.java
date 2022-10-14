@@ -12,11 +12,14 @@ import javax.persistence.*;
 @Getter
 @Setter
 public class PokemonsHabilidad {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     @ManyToOne
     private Pokemon pokemon;
+
     @ManyToOne
     private Habilidad habilidad;
 }

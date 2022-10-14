@@ -10,19 +10,23 @@ import java.util.List;
 @Table (name = "Entrenador")
 @Getter @Setter
 public class Entrenador {
+
     @Id
     @GeneratedValue (strategy = GenerationType.IDENTITY)
     private Long id;
+
     private String nombre;
+
     private String edad;
+
     private String nacionalidad;
 
-    @OneToMany(mappedBy = "entrenador_of_pokeball")
+    @OneToMany(mappedBy = "entrenadorOfPokeball")
     private List<Pokebola> pokebolas;
 
-    @OneToMany(mappedBy = "entrenador_of_pokemon")
+    @OneToMany(mappedBy = "entrenadorOfPokemon")
     private List<Pokemon> pokemons;
 
     @ManyToOne
-    private Liga liga_of_entrenadores;
+    private Liga liga;
 }

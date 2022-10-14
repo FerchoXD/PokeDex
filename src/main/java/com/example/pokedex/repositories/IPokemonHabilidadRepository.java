@@ -15,6 +15,5 @@ public interface IPokemonHabilidadRepository extends JpaRepository<PokemonsHabil
             "inner join habilidad on pokemons_habilidades.habilidad_id = habilidad.id " +
             "inner join pokemon on pokemons_habilidades.pokemon_id = pokemon.id " +
             "where pokemons_habilidades.pokemon_id = :pokemonId ", nativeQuery = true)
-
     List<HabilidadProjections> listAllHabilidadesByPokemonId(Long pokemonId);
 }

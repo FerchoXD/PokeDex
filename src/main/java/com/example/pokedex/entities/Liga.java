@@ -10,14 +10,18 @@ import java.util.List;
 @Table(name = "Liga")
 @Getter @Setter
 public class Liga {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String nombre;
-    private String region;
-    private String limitepokemon;
 
-    @OneToMany(mappedBy = "liga_of_entrenadores")
+    private String nombre;
+
+    private String region;
+
+    private String limitePokemon;
+
+    @OneToMany(mappedBy = "liga")
     private List<Entrenador> entrenadores;
 }
 

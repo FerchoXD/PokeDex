@@ -31,7 +31,7 @@ public class ServiceLigaImpl implements ILigaService {
         Liga liga = new Liga();
         liga.setNombre(request.getNombre());
         liga.setRegion(request.getRegion());
-        liga.setLimitepokemon(request.getLimitepokemon());
+        liga.setLimitePokemon(request.getLimitepokemon());
         repository.save(liga);
         return to(liga);
     }
@@ -42,7 +42,7 @@ public class ServiceLigaImpl implements ILigaService {
         Liga liga = find(id);
         liga.setNombre(request.getNombre());
         liga.setRegion(request.getRegion());
-        liga.setLimitepokemon(request.getLimitepokemon());
+        liga.setLimitePokemon(request.getLimitepokemon());
         repository.save(liga);
         return fromUpdate(liga);
     }
@@ -62,7 +62,7 @@ public class ServiceLigaImpl implements ILigaService {
         response.setId(liga.getId());
         response.setNombre(liga.getNombre());
         response.setRegion(liga.getRegion());
-        response.setLimitepokemon(liga.getLimitepokemon());
+        response.setLimitepokemon(liga.getLimitePokemon());
         return response;
     }
 
@@ -71,7 +71,7 @@ public class ServiceLigaImpl implements ILigaService {
         response.setId(liga.getId());
         response.setNombre(liga.getNombre());
         response.setRegion(liga.getRegion());
-        response.setLimitepokemon(liga.getLimitepokemon());
+        response.setLimitepokemon(liga.getLimitePokemon());
         return response;
     }
 
@@ -80,7 +80,7 @@ public class ServiceLigaImpl implements ILigaService {
         response.setId(liga.getId());
         response.setNombre(liga.getNombre());
         response.setRegion(liga.getRegion());
-        response.setLimitepokemon(liga.getLimitepokemon());
+        response.setLimitepokemon(liga.getLimitePokemon());
         return response;
     }
     public Liga find(Long id){

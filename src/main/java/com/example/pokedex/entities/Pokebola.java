@@ -9,12 +9,15 @@ import javax.persistence.*;
 @Table(name = "Pokebola")
 @Getter @Setter
 public class Pokebola {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "pokebola_id")
     private Long id;
+
     private String nombre;
+
     private String nivel;
+
     private String color;
 
     @OneToOne
@@ -23,6 +26,6 @@ public class Pokebola {
     private Pokemon pokemon;
 
     @ManyToOne
-    private Entrenador entrenador_of_pokeball;
+    private Entrenador entrenadorOfPokeball;
 }
 

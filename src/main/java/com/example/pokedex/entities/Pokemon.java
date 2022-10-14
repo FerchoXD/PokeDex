@@ -11,13 +11,18 @@ import java.util.List;
 @Table (name = "pokemon")
 @Getter @Setter
 public class Pokemon {
+
     @Id
-    @GeneratedValue (strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     private String nombre;
-    private String Especie;
-    private String Tipo;
-    private String Color;
+
+    private String especie;
+
+    private String tipo;
+
+    private String color;
 
     @OneToOne(mappedBy = "pokemon")
     @PrimaryKeyJoinColumn
@@ -27,5 +32,5 @@ public class Pokemon {
     private List<PokemonsHabilidad> pokemonsHabilidades;
 
     @ManyToOne
-    private Entrenador entrenador_of_pokemon;
+    private Entrenador entrenadorOfPokemon;
 }
