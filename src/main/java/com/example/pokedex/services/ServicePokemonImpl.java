@@ -29,9 +29,9 @@ public class ServicePokemonImpl implements IPokemonService {
     @Override
     public CreatePokemonResponse create(CreatePokemonRequest request) {
         Pokemon pokemon= new Pokemon();
-        pokemon.setNombre(request.getNombre());
-        pokemon.setEspecie(request.getEspecie());
-        pokemon.setTipo(request.getTipo());
+        pokemon.setName(request.getName());
+        pokemon.setSpecies(request.getSpecies());
+        pokemon.setType(request.getType());
         pokemon.setColor(request.getColor());
         repository.save(pokemon);
         return to(pokemon);
@@ -40,9 +40,9 @@ public class ServicePokemonImpl implements IPokemonService {
     @Override
     public UpdatePokemonResponse update(UpdatePokemonRequest request, Long id) {
         Pokemon pokemon = find(id);
-        pokemon.setNombre(request.getNombre());
-        pokemon.setEspecie(request.getEspecie());
-        pokemon.setTipo(request.getTipo());
+        pokemon.setName(request.getName());
+        pokemon.setSpecies(request.getSpecies());
+        pokemon.setType(request.getType());
         pokemon.setColor(request.getColor());
         repository.save(pokemon);
         return fromUpdate(pokemon);
@@ -61,9 +61,9 @@ public class ServicePokemonImpl implements IPokemonService {
     public CreatePokemonResponse to(Pokemon pokemon) {
         CreatePokemonResponse response = new CreatePokemonResponse();
         response.setId(pokemon.getId());
-        response.setNombre(pokemon.getNombre());
-        response.setEspecie(pokemon.getEspecie());
-        response.setTipo(pokemon.getTipo());
+        response.setName(pokemon.getName());
+        response.setSpecies(pokemon.getSpecies());
+        response.setType(pokemon.getType());
         response.setColor(pokemon.getColor());
         return response;
     }
@@ -71,9 +71,9 @@ public class ServicePokemonImpl implements IPokemonService {
     public GetPokemonResponse from(Pokemon pokemon) {
         GetPokemonResponse response = new GetPokemonResponse();
         response.setId(pokemon.getId());
-        response.setTipo(pokemon.getTipo());
-        response.setEspecie(pokemon.getEspecie());
-        response.setNombre(pokemon.getNombre());
+        response.setType(pokemon.getType());
+        response.setSpecies(pokemon.getSpecies());
+        response.setName(pokemon.getName());
         response.setColor(pokemon.getColor());
         return response;
     }
@@ -81,9 +81,9 @@ public class ServicePokemonImpl implements IPokemonService {
     public UpdatePokemonResponse fromUpdate(Pokemon pokemon) {
         UpdatePokemonResponse response = new UpdatePokemonResponse();
         response.setId(pokemon.getId());
-        response.setNombre(pokemon.getNombre());
-        response.setTipo(pokemon.getTipo());
-        response.setEspecie(pokemon.getEspecie());
+        response.setName(pokemon.getName());
+        response.setType(pokemon.getType());
+        response.setSpecies(pokemon.getSpecies());
         response.setColor(pokemon.getColor());
         return response;
     }

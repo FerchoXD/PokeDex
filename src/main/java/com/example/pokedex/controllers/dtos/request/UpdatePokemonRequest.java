@@ -4,8 +4,12 @@ import lombok.Setter;
 
 @Getter @Setter
 public class UpdatePokemonRequest {
-    private String nombre;
-    private String Especie;
-    private String Tipo;
+    private String name;
+
+    private String species;
+
+    private String type;
+
     private String Color;
+
 }

@@ -3,12 +3,10 @@ import lombok.Getter;
 import lombok.Setter;
 
 @Getter @Setter
-public class CreatePokemonRequest {
+public class CreateTrainerRequest {
     private String name;
 
-    private String species;
+    private String age;
 
-    private String type;
-
-    private String Color;
+    private String nationality;
 }

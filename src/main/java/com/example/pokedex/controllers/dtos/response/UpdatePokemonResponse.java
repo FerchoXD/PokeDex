@@ -5,8 +5,12 @@ import lombok.Setter;
 @Getter @Setter
 public class UpdatePokemonResponse {
     private Long id;
-    private String nombre;
-    private String Especie;
-    private String Tipo;
+
+    private String name;
+
+    private String species;
+
+    private String type;
+
     private String Color;
 }

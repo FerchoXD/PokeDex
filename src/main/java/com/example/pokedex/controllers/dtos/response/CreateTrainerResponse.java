@@ -3,14 +3,12 @@ import lombok.Getter;
 import lombok.Setter;
 
 @Getter @Setter
-public class CreatePokemonResponse {
+public class CreateTrainerResponse {
     private Long id;
 
     private String name;
 
-    private String species;
+    private String age;
 
-    private String type;
-
-    private String Color;
+    private String nationality;
 }

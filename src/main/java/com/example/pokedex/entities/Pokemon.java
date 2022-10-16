@@ -1,6 +1,7 @@
 package com.example.pokedex.entities;
 
-import com.example.pokedex.pivots.PokemonsHabilidad;
+import com.example.pokedex.pivots.PokemonsSkill;
+import com.example.pokedex.pivots.TrainersPokemon;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -8,7 +9,7 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity
-@Table (name = "pokemon")
+@Table (name = "pokemons")
 @Getter @Setter
 public class Pokemon {
 
@@ -16,21 +17,21 @@ public class Pokemon {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String nombre;
+    private String name;
 
-    private String especie;
+    private String species;
 
-    private String tipo;
+    private String type;
 
     private String color;
 
     @OneToOne(mappedBy = "pokemon")
     @PrimaryKeyJoinColumn
-    private Pokebola pokebola;
+    private Pokeball pokeball;
 
     @OneToMany(mappedBy = "pokemon")
-    private List<PokemonsHabilidad> pokemonsHabilidades;
+    private List<PokemonsSkill> pokemonsSkills;
 
-    @ManyToOne
-    private Entrenador entrenadorOfPokemon;
+    @OneToMany(mappedBy = "pokemon")
+    private List<TrainersPokemon> trainersPokemon;
 }

@@ -1,14 +1,13 @@
 package com.example.pokedex.controllers.dtos.request;
+
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter @Setter
-public class CreatePokemonRequest {
+public class UpdateLeagueRequest {
     private String name;
 
-    private String species;
+    private String region;
 
-    private String type;
-
-    private String Color;
+    private String limitpokemon;
 }
