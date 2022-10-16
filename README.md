@@ -1,6 +1,6 @@
-<h1 align="center" zise=19> API-POKEDEX </h1>
+<h1 align="center" zise=20> API-POKEDEX </h1>
 
-* Descripción
+* <h1 aling="center" zise=15> Descripcion </h1>
 
 Este proyecto presentará un API_Rest de un PokeDex recopilando informacion de internet y de sitios como:
 
@@ -15,7 +15,7 @@ todo esto para la obtencion de la informacion exacta.
     <img src="https://img.shields.io/badge/STATUS-EN%20DESAROLLO-green">
 </p>
 
-* Equipo de trabajo
+* <h1 aling="center" zise=15> Equipo de Trabajo </h1>
 
 1.-Fernando
 
@@ -25,7 +25,7 @@ todo esto para la obtencion de la informacion exacta.
 
 ## Autores
 
-| [<img src="(![pikachu-5527377](https://user-images.githubusercontent.com/98494893/196017633-fef8e9e6-40b9-4386-baf8-2295a37684c6.jpg)" width=115><br><sub>Fernando</sub>](https://github.com/Fernandodani) | [<img src="https://avatars.githubusercontent.com/u/71970858?v=4" width=115><br><sub>Ellen Pimentel</sub>]([https://github.com/guilhermeonrails](https://github.com/ellenpimentel)) |  [<img src="https://avatars.githubusercontent.com/u/91544872?v=4" width=115><br><sub>Génesys Rondón</sub>](https://github.com/genesysaluralatam) |
+| [<img src="(![Pikachu-Boné-Pokémon-PNG](https://user-images.githubusercontent.com/98494893/196017797-b916792d-df1c-460e-b850-8cd9afdd3e10.png)" width=115><br><sub>Fernando</sub>](https://github.com/Fernandodani) | [<img src="https://avatars.githubusercontent.com/u/71970858?v=4" width=115><br><sub>Ellen Pimentel</sub>]([https://github.com/guilhermeonrails](https://github.com/ellenpimentel)) |  [<img src="https://avatars.githubusercontent.com/u/91544872?v=4" width=115><br><sub>Génesys Rondón</sub>](https://github.com/genesysaluralatam) |
 | :---: | :---: | :---: |
 
 Diagrama modelo Entidad-Relación
