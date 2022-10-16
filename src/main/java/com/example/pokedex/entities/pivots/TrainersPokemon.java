@@ -1,6 +1,7 @@
-package com.example.pokedex.pivots;
+package com.example.pokedex.entities.pivots;
 
 import com.example.pokedex.entities.League;
+import com.example.pokedex.entities.Pokemon;
 import com.example.pokedex.entities.Trainer;
 import lombok.Getter;
 import lombok.Setter;
@@ -8,10 +9,10 @@ import lombok.Setter;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "trainerLeague")
+@Table(name = "trainerPokemon")
 @Getter
 @Setter
-public class TrainersLeague {
+public class TrainersPokemon {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -20,5 +21,5 @@ public class TrainersLeague {
     private Trainer trainer;
 
     @ManyToOne
-    private League league;
+    private Pokemon pokemon;
 }

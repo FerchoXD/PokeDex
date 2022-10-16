@@ -3,15 +3,16 @@ package com.example.pokedex.controllers.dtos.response;
 import lombok.Getter;
 import lombok.Setter;
 
-@Getter @Setter
-public class SkillResponse {
+@Getter
+@Setter
+public class PokemonResponse {
     private Long id;
 
     private String name;
 
-    private String effect;
+    private String species;
 
     private String type;
 
-    private String pokemonName;
+    private String Color;
 }

@@ -1,4 +1,4 @@
-package com.example.pokedex.pivots;
+package com.example.pokedex.entities.pivots;
 
 import com.example.pokedex.entities.Skill;
 import com.example.pokedex.entities.Pokemon;

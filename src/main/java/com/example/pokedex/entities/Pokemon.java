@@ -1,7 +1,7 @@
 package com.example.pokedex.entities;
 
-import com.example.pokedex.pivots.PokemonsSkill;
-import com.example.pokedex.pivots.TrainersPokemon;
+import com.example.pokedex.entities.pivots.PokemonsSkill;
+import com.example.pokedex.entities.pivots.TrainersPokemon;
 import lombok.Getter;
 import lombok.Setter;
 

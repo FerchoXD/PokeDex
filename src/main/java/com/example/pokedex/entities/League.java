@@ -1,6 +1,6 @@
 package com.example.pokedex.entities;
 
-import com.example.pokedex.pivots.TrainersLeague;
+import com.example.pokedex.entities.pivots.TrainersLeague;
 import lombok.Getter;
 import lombok.Setter;
 

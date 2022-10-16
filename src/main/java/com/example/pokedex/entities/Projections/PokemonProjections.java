@@ -1,14 +1,14 @@
 package com.example.pokedex.entities.Projections;
 
-public interface SkillProjections {
-
+public interface PokemonProjections {
     Long getId();
 
     String getName();
 
-    String getEffect();
+    String getSpecies();
 
     String getType();
 
-    String getPokemonName();
+    String getColor();
+
 }
