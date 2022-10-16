@@ -1,4 +1,4 @@
-                                                         API-POKEDEX
+                API-POKEDEX
 
 * Descripción
 
