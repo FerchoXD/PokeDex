@@ -1,4 +1,4 @@
-                API-POKEDEX
+<h1 align="center"> API-POKEDEX </h1>
 
 * Descripción
 
@@ -11,6 +11,10 @@ https://www.wikidex.net/wiki/Lista_de_habilidades
 
 todo esto para la obtencion de la informacion exacta.
 
+<p align="left">
+    <img src="https://img.shields.io/badge/STATUS-EN%20DESAROLLO-green">
+</p>
+
 * Equipo de trabajo
 
 1.-Fernando
@@ -19,6 +23,10 @@ todo esto para la obtencion de la informacion exacta.
 
 3.-Gamaliel
 
+## Autores
+
+| [<img src="https://avatars.githubusercontent.com/u/37356058?v=4" width=115><br><sub>Camila Fernanda Alves</sub>](https://github.com/camilafernanda) |  [<img src="https://avatars.githubusercontent.com/u/71970858?v=4" width=115><br><sub>Ellen Pimentel</sub>]([https://github.com/guilhermeonrails](https://github.com/ellenpimentel)) |  [<img src="https://avatars.githubusercontent.com/u/91544872?v=4" width=115><br><sub>Génesys Rondón</sub>](https://github.com/genesysaluralatam) |
+| :---: | :---: | :---: |
 
 Diagrama modelo Entidad-Relación
 ![DiagramaGOD](https://user-images.githubusercontent.com/98494893/196014426-30f19a61-8ebc-4fa5-b92b-48e906dc4d16.PNG)
