@@ -25,7 +25,7 @@ todo esto para la obtencion de la informacion exacta.
 
 ## Autores
 
-| [<img src="https://user-images.githubusercontent.com/98494893/196017797-b916792d-df1c-460e-b850-8cd9afdd3e10.png" width=115><br><sub>Fernando</sub>](https://github.com/Fernandodani) | [<img src="https://user-images.githubusercontent.com/98494893/196017956-5eeb18b2-45a8-40ab-8a9b-e2d33c56035e.png" width=115><br><sub>Leonardo J</sub>]([https://github.com/Max-500](https://github.com/Max-500)) |  [<img src="https://avatars.githubusercontent.com/u/91544872?v=4" width=115><br><sub>Génesys Rondón</sub>](https://github.com/genesysaluralatam) |
+| [<img src="https://user-images.githubusercontent.com/98494893/196017797-b916792d-df1c-460e-b850-8cd9afdd3e10.png" width=115><br><sub>Fernando</sub>](https://github.com/Fernandodani) | [<img src="https://user-images.githubusercontent.com/98494893/196018278-e7007b9a-3f62-4282-897b-3d8b9bfcaa29.png" width=115><br><sub>Leonardo J</sub>]([https://github.com/Max-500](https://github.com/Max-500)) |  [<img src="https://avatars.githubusercontent.com/u/91544872?v=4" width=115><br><sub>Génesys Rondón</sub>](https://github.com/genesysaluralatam) |
 | :---: | :---: | :---: |
 
 Diagrama modelo Entidad-Relación
