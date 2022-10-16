@@ -25,7 +25,7 @@ todo esto para la obtencion de la informacion exacta.
 
 ## Autores
 
-| [<img src="(https://user-images.githubusercontent.com/98494893/196017475-23d2d74f-fb0e-48c8-9e8a-ed3105328ecc.png))" width=115><br><sub>Fernando</sub>](https://github.com/Fernandodani) | [<img src="https://avatars.githubusercontent.com/u/71970858?v=4" width=115><br><sub>Ellen Pimentel</sub>]([https://github.com/guilhermeonrails](https://github.com/ellenpimentel)) |  [<img src="https://avatars.githubusercontent.com/u/91544872?v=4" width=115><br><sub>Génesys Rondón</sub>](https://github.com/genesysaluralatam) |
+| [<img src="(![pikachu-5527377](https://user-images.githubusercontent.com/98494893/196017633-fef8e9e6-40b9-4386-baf8-2295a37684c6.jpg)" width=115><br><sub>Fernando</sub>](https://github.com/Fernandodani) | [<img src="https://avatars.githubusercontent.com/u/71970858?v=4" width=115><br><sub>Ellen Pimentel</sub>]([https://github.com/guilhermeonrails](https://github.com/ellenpimentel)) |  [<img src="https://avatars.githubusercontent.com/u/91544872?v=4" width=115><br><sub>Génesys Rondón</sub>](https://github.com/genesysaluralatam) |
 | :---: | :---: | :---: |
 
 Diagrama modelo Entidad-Relación
