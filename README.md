@@ -25,7 +25,7 @@ todo esto para la obtencion de la informacion exacta.
 
 ## Autores
 
-| [<img src=![Pikachu-Boné-Pokémon-PNG]"(https://user-images.githubusercontent.com/98494893/196017797-b916792d-df1c-460e-b850-8cd9afdd3e10.png)" width=115><br><sub>Fernando</sub>](https://github.com/Fernandodani) | [<img src="https://avatars.githubusercontent.com/u/71970858?v=4" width=115><br><sub>Ellen Pimentel</sub>]([https://github.com/guilhermeonrails](https://github.com/ellenpimentel)) |  [<img src="https://avatars.githubusercontent.com/u/91544872?v=4" width=115><br><sub>Génesys Rondón</sub>](https://github.com/genesysaluralatam) |
+| [<img src="https://user-images.githubusercontent.com/98494893/196017797-b916792d-df1c-460e-b850-8cd9afdd3e10.png" width=115><br><sub>Fernando</sub>](https://github.com/Fernandodani) | [<img src="https://avatars.githubusercontent.com/u/71970858?v=4" width=115><br><sub>Ellen Pimentel</sub>]([https://github.com/guilhermeonrails](https://github.com/ellenpimentel)) |  [<img src="https://avatars.githubusercontent.com/u/91544872?v=4" width=115><br><sub>Génesys Rondón</sub>](https://github.com/genesysaluralatam) |
 | :---: | :---: | :---: |
 
 Diagrama modelo Entidad-Relación
