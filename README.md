@@ -2,14 +2,14 @@
 
 * <h1 aling="center" zise=15> Descripcion </h1>
 
-Este proyecto presentará un API_Rest de un PokeDex recopilando informacion de internet y de sitios como:
+Este proyecto presentará un API_Rest de un PokeDex con informacion recopilada de internet y de sitios como:
 
 https://pokemon.fandom.com/es/wiki/Lista_de_Pok%C3%A9mon
     
 https://www.wikidex.net/wiki/Lista_de_habilidades
 
 
-todo esto para la obtencion de la informacion exacta.
+todo esto para la obtencion de la informacion correcta.
 
 <p align="left">
     <img src="https://img.shields.io/badge/STATUS-EN%20DESAROLLO-green">
