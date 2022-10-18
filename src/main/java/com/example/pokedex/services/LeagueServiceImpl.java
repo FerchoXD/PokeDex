@@ -15,7 +15,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @Service
-public class ServiceLeagueImpl implements ILeagueService {
+public class LeagueServiceImpl implements ILeagueService {
     @Autowired
     private ILeagueRepository repository;
 

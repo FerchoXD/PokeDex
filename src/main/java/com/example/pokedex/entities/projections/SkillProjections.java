@@ -1,4 +1,4 @@
-package com.example.pokedex.entities.Projections;
+package com.example.pokedex.entities.projections;
 
 public interface SkillProjections {
 

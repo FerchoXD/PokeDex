@@ -5,7 +5,7 @@ import com.example.pokedex.controllers.dtos.request.UpdateSkillRequest;
 import com.example.pokedex.controllers.dtos.response.CreateSkillResponse;
 import com.example.pokedex.controllers.dtos.response.GetSkillResponse;
 import com.example.pokedex.controllers.dtos.response.UpdateSkillResponse;
-import com.example.pokedex.services.ServiceSkillImpl;
+import com.example.pokedex.services.SkillServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -15,7 +15,7 @@ import java.util.List;
 @RequestMapping("skill")
 public class SkillController {
     @Autowired
-    private ServiceSkillImpl service;
+    private SkillServiceImpl service;
     @GetMapping("{id}")
     public GetSkillResponse get(@PathVariable Long id){
         return service.get(id);

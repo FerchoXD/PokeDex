@@ -1,7 +1,7 @@
 package com.example.pokedex.repositories;
 
-import com.example.pokedex.entities.Projections.PokemonProjections;
-import com.example.pokedex.entities.Projections.SkillProjections;
+import com.example.pokedex.entities.projections.PokemonProjections;
+import com.example.pokedex.entities.projections.SkillProjections;
 import com.example.pokedex.entities.pivots.PokemonsSkill;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;

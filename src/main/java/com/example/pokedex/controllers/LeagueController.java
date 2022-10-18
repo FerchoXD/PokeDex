@@ -5,7 +5,7 @@ import com.example.pokedex.controllers.dtos.request.UpdateLeagueRequest;
 import com.example.pokedex.controllers.dtos.response.CreateLeagueResponse;
 import com.example.pokedex.controllers.dtos.response.GetLeagueResponse;
 import com.example.pokedex.controllers.dtos.response.UpdateLeagueResponse;
-import com.example.pokedex.services.ServiceLeagueImpl;
+import com.example.pokedex.services.LeagueServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -15,7 +15,7 @@ import java.util.List;
 @RequestMapping("league")
 public class LeagueController {
     @Autowired
-    private ServiceLeagueImpl service;
+    private LeagueServiceImpl service;
 
     @GetMapping("{id}")
     public GetLeagueResponse get(@PathVariable Long id){

@@ -15,7 +15,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @Service
-public class ServiceSkillImpl implements ISkillService {
+public class SkillServiceImpl implements ISkillService {
     @Autowired
     private ISkillRepository repository;
 

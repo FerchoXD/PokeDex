@@ -15,7 +15,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @Service
-public class ServiceTrainerImpl implements ITrainerService {
+public class TrainerServiceImpl implements ITrainerService {
     @Autowired
     private ITrainerRepository repository;
 

@@ -15,7 +15,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @Service
-public class ServicePokemonImpl implements IPokemonService {
+public class PokemonServiceImpl implements IPokemonService {
     @Autowired
     private IPokemonRepository repository;
 

@@ -5,7 +5,7 @@ import com.example.pokedex.controllers.dtos.request.UpdatePokemonRequest;
 import com.example.pokedex.controllers.dtos.response.CreatePokemonResponse;
 import com.example.pokedex.controllers.dtos.response.GetPokemonResponse;
 import com.example.pokedex.controllers.dtos.response.UpdatePokemonResponse;
-import com.example.pokedex.services.ServicePokemonImpl;
+import com.example.pokedex.services.PokemonServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -15,7 +15,7 @@ import java.util.List;
 @RequestMapping("pokemon")
 public class PokemonController {
     @Autowired
-    private ServicePokemonImpl service;
+    private PokemonServiceImpl service;
     @GetMapping("{id}")
     public GetPokemonResponse get(@PathVariable Long id){
         return service.get(id);

@@ -2,8 +2,8 @@ package com.example.pokedex.services;
 
 import com.example.pokedex.controllers.dtos.response.PokemonResponse;
 import com.example.pokedex.controllers.dtos.response.SkillResponse;
-import com.example.pokedex.entities.Projections.PokemonProjections;
-import com.example.pokedex.entities.Projections.SkillProjections;
+import com.example.pokedex.entities.projections.PokemonProjections;
+import com.example.pokedex.entities.projections.SkillProjections;
 import com.example.pokedex.repositories.IPokemonSkillRepository;
 import com.example.pokedex.services.interfaces.IPokemonSkillService;
 import org.springframework.beans.factory.annotation.Autowired;
