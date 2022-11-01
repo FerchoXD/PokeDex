@@ -23,6 +23,8 @@ public class Trainer {
 
     private String nationality;
 
+    private String profilePictureUrl;
+
     @OneToMany(mappedBy = "trainer")
     private List<TrainersPokemon> trainersPokemon;
 

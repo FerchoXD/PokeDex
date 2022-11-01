@@ -47,14 +47,15 @@ public class TrainerServiceImpl implements ITrainerService {
     }
 
     @Override
+    public void delete(Long id) {
+        repository.deleteById(id);
+    }
+
+    @Override
     public List<GetTrainerResponse> list() {
         return repository.findAll().stream().map(this::from).collect(Collectors.toList());
     }
 
-    @Override
-    public void delete(Long id) {
-        repository.deleteById(id);
-    }
 
     public CreateTrainerResponse to(Trainer trainer) {
         CreateTrainerResponse response = new CreateTrainerResponse();

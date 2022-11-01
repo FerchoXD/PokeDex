@@ -5,6 +5,7 @@ import com.example.pokedex.controllers.dtos.request.UpdateTrainerRequest;
 import com.example.pokedex.controllers.dtos.response.CreateTrainerResponse;
 import com.example.pokedex.controllers.dtos.response.GetTrainerResponse;
 import com.example.pokedex.controllers.dtos.response.UpdateTrainerResponse;
+import com.example.pokedex.entities.Trainer;
 
 import java.util.List;
 
