@@ -12,4 +12,6 @@ public class GetTrainerResponse {
     private String age;
 
     private String nationality;
+
+    private String profilePicture;
 }

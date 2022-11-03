@@ -18,7 +18,9 @@ public class Pokeball {
 
     private String level;
 
-    private String color;
+    private String recomendacion;
+
+    private String image;
 
     @OneToOne
     @MapsId

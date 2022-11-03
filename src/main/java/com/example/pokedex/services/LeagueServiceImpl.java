@@ -49,7 +49,10 @@ public class LeagueServiceImpl implements ILeagueService {
 
     @Override
     public List<GetLeagueResponse> list() {
-        return repository.findAll().stream().map(this::from).collect(Collectors.toList());
+        return repository.findAll()
+                .stream()
+                .map(this::from)
+                .collect(Collectors.toList());
     }
 
     @Override

@@ -9,5 +9,7 @@ public class UpdateTrainerRequest {
     private String age;
 
     private String nationality;
+
+    private String profilePicture;
 }
 

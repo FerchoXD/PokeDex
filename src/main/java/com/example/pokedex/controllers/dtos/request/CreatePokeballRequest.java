@@ -10,4 +10,6 @@ public class CreatePokeballRequest {
     private String level;
 
     private String color;
+
+    private String image;
 }

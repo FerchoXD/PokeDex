@@ -5,7 +5,12 @@ import lombok.Setter;
 
 @Getter @Setter
 public class CreateLeagueRequest {
+
     private String name;
+
     private String region;
+
     private String limitpokemon;
+
+    private String image;
 }

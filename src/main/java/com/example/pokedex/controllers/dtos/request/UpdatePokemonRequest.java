@@ -12,4 +12,6 @@ public class UpdatePokemonRequest {
 
     private String Color;
 
+    private String image;
+
 }

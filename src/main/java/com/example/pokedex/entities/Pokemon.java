@@ -25,6 +25,8 @@ public class Pokemon {
 
     private String color;
 
+    private String image;
+
     @OneToOne(mappedBy = "pokemon")
     @PrimaryKeyJoinColumn
     private Pokeball pokeball;

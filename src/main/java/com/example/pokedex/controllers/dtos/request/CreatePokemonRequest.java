@@ -11,4 +11,6 @@ public class CreatePokemonRequest {
     private String type;
 
     private String Color;
+
+    private String image;
 }

@@ -12,9 +12,9 @@ import java.util.List;
 @Repository
 public interface IPokemonSkillRepository extends JpaRepository<PokemonsSkill,Long> {
 
-    @Query(value ="select skills.*, pokemons.name as pokemonName from pokemon_skill " +
-            "inner join skills on pokemon_skill.skill_id = skills.id " +
-            "where pokemon_skill.pokemon_id = :pokemonId ", nativeQuery = true)
+    @Query(value ="SELECT skills.*, pokemons.name AS pokemonName FROM pokemon_skill " +
+            "INNER JOIN skills ON pokemon_skill.skill_id = skills.id " +
+            "WHERE pokemon_skill.pokemon_id = :pokemonId ", nativeQuery = true)
     List<SkillProjections> listAllSkillsByPokemonId(Long pokemonId);
 
     @Query(value="SELECT pokemons.* FROM pokemon_skill " +

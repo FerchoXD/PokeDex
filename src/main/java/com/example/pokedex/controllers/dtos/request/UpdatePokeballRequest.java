@@ -10,4 +10,6 @@ public class UpdatePokeballRequest {
     private String level;
 
     private String color;
+
+    private String image;
 }

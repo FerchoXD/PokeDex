@@ -1,5 +1,6 @@
 package com.example.pokedex.entities;
 
+import com.example.pokedex.entities.pivots.TrainersForum;
 import com.example.pokedex.entities.pivots.TrainersLeague;
 import com.example.pokedex.entities.pivots.TrainersPokemon;
 import lombok.Getter;
@@ -21,13 +22,22 @@ public class Trainer {
 
     private String age;
 
-    private String nationality;
+    private String category;
 
-    private String profilePictureUrl;
+    private String profilePicture;
 
     @OneToMany(mappedBy = "trainer")
     private List<TrainersPokemon> trainersPokemon;
 
     @OneToMany(mappedBy = "trainer")
-    private List<TrainersLeague> trainersLeagues;
+    private List<TrainersLeague> trainersLeague;
+
+    @OneToMany(mappedBy = "trainer")
+    private List<TrainersForum> trainersForum;
+
+    @OneToMany(mappedBy = "trainer")
+    private List<Tips> tips;
+
+    @OneToMany(mappedBy = "trainer")
+    private List<Comment> comment;
 }

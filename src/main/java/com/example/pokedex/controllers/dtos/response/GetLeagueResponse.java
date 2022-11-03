@@ -12,4 +12,6 @@ public class GetLeagueResponse {
     private String region;
 
     private String limitpokemon;
+
+    private String image;
 }

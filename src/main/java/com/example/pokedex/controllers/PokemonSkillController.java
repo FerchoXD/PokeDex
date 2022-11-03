@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping("pokemon-skill")
+@RequestMapping("pokemon/skill")
 public class PokemonSkillController {
     @Autowired
     private PokemonSkillServiceImpl service;

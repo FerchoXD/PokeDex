@@ -13,4 +13,6 @@ public class UpdatePokemonResponse {
     private String type;
 
     private String Color;
+
+    private String image;
 }

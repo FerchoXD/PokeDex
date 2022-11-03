@@ -12,4 +12,6 @@ public class GetPokeballResponse {
     private String level;
 
     private String color;
+
+    private String image;
 }
