@@ -13,7 +13,5 @@ public class GetPokemonResponse {
 
     private String type;
 
-    private String Color;
-
     private String image;
 }

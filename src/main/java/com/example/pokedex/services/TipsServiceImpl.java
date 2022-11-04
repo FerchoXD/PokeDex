@@ -5,6 +5,9 @@ import com.example.pokedex.controllers.dtos.request.UpdateTipsRequest;
 import com.example.pokedex.controllers.dtos.response.*;
 import com.example.pokedex.entities.Skill;
 import com.example.pokedex.entities.Tips;
+import com.example.pokedex.entities.projections.PokeballProjections;
+import com.example.pokedex.entities.projections.SkillProjections;
+import com.example.pokedex.entities.projections.TipsProjections;
 import com.example.pokedex.repositories.ITipsRepository;
 import com.example.pokedex.services.interfaces.ITipsService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -50,6 +53,20 @@ public class TipsServiceImpl implements ITipsService {
     @Override
     public void delete(Long id) {
         repository.deleteById(id);
+    }
+
+    @Override
+    public List<TipsResponse> listAllTipsByTrainersId(Long trainersId) {
+        List<TipsProjections> tips = repository.listAllTrainersByPokemonId(trainersId);
+        return tips.stream().map(this::from).collect(Collectors.toList());
+        }
+
+    private TipsResponse from (TipsProjections tips){
+        TipsResponse response = new TipsResponse();
+        response.setId(tips.getId());
+        response.setDescription(tips.getDescription());
+        response.setImage(tips.getImage());
+        return response;
     }
 
     public CreateTipsResponse to(Tips tips) {

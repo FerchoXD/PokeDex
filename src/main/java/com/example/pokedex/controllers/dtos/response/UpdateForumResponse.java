@@ -13,6 +13,4 @@ public class UpdateForumResponse {
     private String date;
 
     private String hour;
-
-    private String category;
 }

@@ -2,10 +2,11 @@ package com.example.pokedex.services;
 
 import com.example.pokedex.controllers.dtos.request.CreatePokeballRequest;
 import com.example.pokedex.controllers.dtos.request.UpdatePokeballRequest;
-import com.example.pokedex.controllers.dtos.response.CreatePokeballResponse;
-import com.example.pokedex.controllers.dtos.response.GetPokeballResponse;
-import com.example.pokedex.controllers.dtos.response.UpdatePokeballResponse;
+import com.example.pokedex.controllers.dtos.response.*;
 import com.example.pokedex.entities.Pokeball;
+import com.example.pokedex.entities.projections.PokeballProjections;
+import com.example.pokedex.entities.projections.SkillProjections;
+import com.example.pokedex.entities.projections.TrainerProjections;
 import com.example.pokedex.repositories.IPokeballRepository;
 import com.example.pokedex.services.interfaces.IPokeballService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,7 +32,7 @@ public class PokeballServiceImpl implements IPokeballService {
         Pokeball pokeball = new Pokeball();
         pokeball.setName(request.getName());
         pokeball.setLevel(request.getLevel());
-        pokeball.setColor(request.getColor());
+        pokeball.setRecommendation(request.getRecommendation());
         repository.save(pokeball);
         return to(pokeball);
     }
@@ -42,7 +43,7 @@ public class PokeballServiceImpl implements IPokeballService {
         Pokeball pokeball = find(id);
         pokeball.setName(request.getName());
         pokeball.setLevel(request.getLevel());
-        pokeball.setColor(request.getColor());
+        pokeball.setRecommendation(request.getRecommendation());
         repository.save(pokeball);
         return fromUpdate(pokeball);
     }
@@ -57,12 +58,28 @@ public class PokeballServiceImpl implements IPokeballService {
         repository.deleteById(id);
     }
 
+    @Override
+    public List<PokeballResponse> listAllTrainersByPokemonId(Long pokemonId) {
+        List<PokeballProjections> trainers = repository.listAllTrainersByPokemonId(pokemonId);
+        return trainers.stream().map(this::from).collect(Collectors.toList());
+    }
+
+    private PokeballResponse from (PokeballProjections pokeball){
+        PokeballResponse response = new PokeballResponse();
+        response.setId(pokeball.getId());
+        response.setName(pokeball.getName());
+        response.setLevel(pokeball.getLevel());
+        response.setRecommendation(pokeball.getRecommendation());
+        response.setImage(pokeball.getImage());
+        return response;
+    }
+
     public GetPokeballResponse from(Pokeball pokeball) {
         GetPokeballResponse response = new GetPokeballResponse();
         response.setId(pokeball.getId());
         response.setName(pokeball.getName());
         response.setLevel(pokeball.getLevel());
-        response.setColor(pokeball.getColor());
+        response.setRecommendation(pokeball.getRecommendation());
         return response;
     }
 
@@ -71,7 +88,7 @@ public class PokeballServiceImpl implements IPokeballService {
         response.setId(pokeball.getId());
         response.setName(pokeball.getName());
         response.setLevel(pokeball.getLevel());
-        response.setColor(pokeball.getColor());
+        response.setRecommendation(pokeball.getRecommendation());
         return response;
     }
 
@@ -80,7 +97,7 @@ public class PokeballServiceImpl implements IPokeballService {
         response.setId(pokeball.getId());
         response.setName(pokeball.getName());
         response.setLevel(pokeball.getLevel());
-        response.setColor(pokeball.getColor());
+        response.setRecommendation(pokeball.getRecommendation());
         return response;
     }
     public Pokeball find(Long id){

@@ -21,5 +21,4 @@ public interface IPokemonSkillRepository extends JpaRepository<PokemonsSkill,Lon
             "inner join pokemons on pokemon_skill.pokemon_id = pokemons.id " +
             "where pokemon_skill.skill_id = :skillId ", nativeQuery = true)
     List<PokemonProjections> listAllPokemonBySkillsId(Long skillId);
-
 }

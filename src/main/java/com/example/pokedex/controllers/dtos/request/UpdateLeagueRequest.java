@@ -9,7 +9,5 @@ public class UpdateLeagueRequest extends UpdateForumRequest {
 
     private String region;
 
-    private String limitpokemon;
-
     private String image;
 }

@@ -10,7 +10,5 @@ public class CreateLeagueRequest {
 
     private String region;
 
-    private String limitpokemon;
-
     private String image;
 }

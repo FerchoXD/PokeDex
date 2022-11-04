@@ -12,5 +12,4 @@ public class CreateForumRequest {
 
     private String hour;
 
-    private String category;
 }

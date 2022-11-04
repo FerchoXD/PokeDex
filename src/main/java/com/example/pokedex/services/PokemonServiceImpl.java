@@ -32,7 +32,7 @@ public class PokemonServiceImpl implements IPokemonService {
         pokemon.setName(request.getName());
         pokemon.setSpecies(request.getSpecies());
         pokemon.setType(request.getType());
-        pokemon.setColor(request.getColor());
+        pokemon.setImage(request.getName());
         repository.save(pokemon);
         return to(pokemon);
     }
@@ -43,7 +43,7 @@ public class PokemonServiceImpl implements IPokemonService {
         pokemon.setName(request.getName());
         pokemon.setSpecies(request.getSpecies());
         pokemon.setType(request.getType());
-        pokemon.setColor(request.getColor());
+        pokemon.setImage(request.getName());
         repository.save(pokemon);
         return fromUpdate(pokemon);
     }
@@ -64,7 +64,7 @@ public class PokemonServiceImpl implements IPokemonService {
         response.setName(pokemon.getName());
         response.setSpecies(pokemon.getSpecies());
         response.setType(pokemon.getType());
-        response.setColor(pokemon.getColor());
+        response.setImage(pokemon.getImage());
         return response;
     }
 
@@ -74,7 +74,7 @@ public class PokemonServiceImpl implements IPokemonService {
         response.setType(pokemon.getType());
         response.setSpecies(pokemon.getSpecies());
         response.setName(pokemon.getName());
-        response.setColor(pokemon.getColor());
+        response.setImage(pokemon.getImage());
         return response;
     }
 
@@ -84,7 +84,7 @@ public class PokemonServiceImpl implements IPokemonService {
         response.setName(pokemon.getName());
         response.setType(pokemon.getType());
         response.setSpecies(pokemon.getSpecies());
-        response.setColor(pokemon.getColor());
+        response.setImage(pokemon.getImage());
         return response;
     }
     public Pokemon find(Long id){

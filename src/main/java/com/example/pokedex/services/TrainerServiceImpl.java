@@ -31,7 +31,7 @@ public class TrainerServiceImpl implements ITrainerService {
         Trainer trainer = new Trainer();
         trainer.setName(request.getName());
         trainer.setAge(request.getAge());
-        trainer.setNationality(request.getNationality());
+        trainer.setCategory(request.getCategory());
         repository.save(trainer);
         return to(trainer);
     }
@@ -41,7 +41,7 @@ public class TrainerServiceImpl implements ITrainerService {
         Trainer trainer = find(id);
         trainer.setName(request.getName());
         trainer.setAge(request.getAge());
-        trainer.setNationality(request.getNationality());
+        trainer.setCategory(request.getCategory());
         repository.save(trainer);
         return fromUpdate(trainer);
     }
@@ -62,7 +62,7 @@ public class TrainerServiceImpl implements ITrainerService {
         response.setId(trainer.getId());
         response.setName(trainer.getName());
         response.setAge(trainer.getAge());
-        response.setNationality(trainer.getNationality());
+        response.setCategory(trainer.getCategory());
         return response;
     }
 
@@ -70,7 +70,7 @@ public class TrainerServiceImpl implements ITrainerService {
         GetTrainerResponse response = new GetTrainerResponse();
         response.setId(trainer.getId());
         response.setName(trainer.getName());
-        response.setNationality(trainer.getNationality());
+        response.setCategory(trainer.getCategory());
         response.setAge(trainer.getAge());
         return response;
     }
@@ -79,7 +79,7 @@ public class TrainerServiceImpl implements ITrainerService {
         UpdateTrainerResponse response = new UpdateTrainerResponse();
         response.setId(trainer.getId());
         response.setName(trainer.getName());
-        response.setNationality(trainer.getNationality());
+        response.setCategory(trainer.getCategory());
         response.setAge(trainer.getAge());
         return response;
     }

@@ -31,7 +31,6 @@ public class LeagueServiceImpl implements ILeagueService {
         League league = new League();
         league.setName(request.getName());
         league.setRegion(request.getRegion());
-        league.setLimitPokemon(request.getLimitpokemon());
         repository.save(league);
         return to(league);
     }
@@ -42,7 +41,6 @@ public class LeagueServiceImpl implements ILeagueService {
         League league = find(id);
         league.setName(request.getName());
         league.setRegion(request.getRegion());
-        league.setLimitPokemon(request.getLimitpokemon());
         repository.save(league);
         return fromUpdate(league);
     }
@@ -65,7 +63,6 @@ public class LeagueServiceImpl implements ILeagueService {
         response.setId(league.getId());
         response.setName(league.getName());
         response.setRegion(league.getRegion());
-        response.setLimitpokemon(league.getLimitPokemon());
         return response;
     }
 
@@ -74,7 +71,6 @@ public class LeagueServiceImpl implements ILeagueService {
         response.setId(league.getId());
         response.setName(league.getName());
         response.setRegion(league.getRegion());
-        response.setLimitpokemon(league.getLimitPokemon());
         return response;
     }
 
@@ -83,7 +79,6 @@ public class LeagueServiceImpl implements ILeagueService {
         response.setId(league.getId());
         response.setName(league.getName());
         response.setRegion(league.getRegion());
-        response.setLimitpokemon(league.getLimitPokemon());
         return response;
     }
     public League find(Long id){

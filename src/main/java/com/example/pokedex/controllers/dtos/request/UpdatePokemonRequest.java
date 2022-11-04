@@ -10,8 +10,6 @@ public class UpdatePokemonRequest {
 
     private String type;
 
-    private String Color;
-
     private String image;
 
 }

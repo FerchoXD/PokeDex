@@ -7,7 +7,7 @@ public interface TrainerProjections {
 
     String getAge();
 
-    String getNationality();
+    String getCategory();
 
     String getProfilePicture();
 }

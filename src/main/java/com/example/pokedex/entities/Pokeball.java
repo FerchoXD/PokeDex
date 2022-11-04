@@ -18,13 +18,11 @@ public class Pokeball {
 
     private String level;
 
-    private String recomendacion;
+    private String recommendation;
 
     private String image;
 
     @OneToOne
-    @MapsId
-    @JoinColumn(name = "pokeball_id")
     private Pokemon pokemon;
 }
 

@@ -31,7 +31,6 @@ public class ForumServiceImpl implements IForumService {
         forum.setTopic(request.getTopic());
         forum.setHour(request.getHour());
         forum.setDate(request.getDate());
-        forum.setCategory(request.getCategory());
         repository.save(forum);
         return to(forum);
     }
@@ -42,7 +41,6 @@ public class ForumServiceImpl implements IForumService {
         forum.setTopic(request.getTopic());
         forum.setHour(request.getHour());
         forum.setDate(request.getDate());
-        forum.setCategory(request.getCategory());
         repository.save(forum);
         return fromUpdate(forum);
     }
@@ -68,7 +66,6 @@ public class ForumServiceImpl implements IForumService {
         response.setTopic(forum.getTopic());
         response.setHour(forum.getHour());
         response.setDate(forum.getDate());
-        response.setCategory(forum.getCategory());
         return response;
     }
 
@@ -78,7 +75,6 @@ public class ForumServiceImpl implements IForumService {
         response.setTopic(forum.getTopic());
         response.setHour(forum.getHour());
         response.setDate(forum.getDate());
-        response.setCategory(forum.getCategory());
         return response;
     }
 
@@ -88,7 +84,6 @@ public class ForumServiceImpl implements IForumService {
         response.setTopic(forum.getTopic());
         response.setHour(forum.getHour());
         response.setDate(forum.getDate());
-        response.setCategory(forum.getCategory());
         return response;
     }
     public Forum find(Long id){
