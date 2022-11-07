@@ -6,10 +6,12 @@ import lombok.Setter;
 public class UpdateTrainerRequest {
     private String name;
 
+    private String password;
+
     private String age;
 
     private String category;
 
-    private String profilePicture;
+    private String image;
 }
 

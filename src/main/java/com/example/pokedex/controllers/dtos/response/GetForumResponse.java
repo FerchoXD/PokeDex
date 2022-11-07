@@ -3,6 +3,9 @@ package com.example.pokedex.controllers.dtos.response;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.sql.Time;
+import java.util.Date;
+
 @Getter
 @Setter
 public class GetForumResponse {
@@ -10,7 +13,7 @@ public class GetForumResponse {
 
     private String topic;
 
-    private String date;
+    private Date date;
 
-    private String hour;
+    private Time hour;
 }

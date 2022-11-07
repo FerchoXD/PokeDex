@@ -1,11 +1,11 @@
 package com.example.pokedex.services.interfaces;
 
-import com.example.pokedex.controllers.dtos.response.SkillResponse;
-import com.example.pokedex.controllers.dtos.response.TrainerResponse;
+import com.example.pokedex.controllers.dtos.response.BaseResponse;
+import com.example.pokedex.controllers.dtos.response.TrainerForumResponse;
 
 import java.util.List;
 
 public interface ITrainersForumService {
 
-    List<TrainerResponse> listAllTrainersByForumId(Long forumId);
+    BaseResponse listAllTrainersByForumId(Long forumId);
 }

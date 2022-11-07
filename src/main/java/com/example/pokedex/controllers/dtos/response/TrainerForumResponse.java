@@ -5,14 +5,18 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class PokemonResponse {
+public class TrainerForumResponse {
     private Long id;
 
     private String name;
 
-    private String species;
+    private String age;
 
-    private String type;
+    private String category;
 
     private String image;
+
+    private String forumsTopic;
+
+    private String forumsId;
 }

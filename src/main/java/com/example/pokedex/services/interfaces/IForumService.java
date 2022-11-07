@@ -10,7 +10,7 @@ import java.util.List;
 public interface IForumService {
     GetForumResponse get(Long id);
 
-    CreateForumResponse create(CreateForumRequest request);
+    BaseResponse create(CreateForumRequest request);
 
     List<GetForumResponse> list();
 

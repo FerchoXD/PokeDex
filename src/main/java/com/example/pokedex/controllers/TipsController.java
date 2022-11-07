@@ -5,6 +5,7 @@ import com.example.pokedex.controllers.dtos.request.UpdateTipsRequest;
 import com.example.pokedex.controllers.dtos.response.*;
 import com.example.pokedex.services.interfaces.ITipsService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -21,8 +22,9 @@ public class TipsController {
     }
 
     @PostMapping
-    public CreateTipsResponse Create(@RequestBody CreateTipsRequest request) {
-        return service.create(request);
+    public ResponseEntity<BaseResponse> Create(@RequestBody CreateTipsRequest request) {
+        BaseResponse baseResponse = service.create(request);
+        return new ResponseEntity<>(baseResponse,baseResponse.getHttpStatus());
     }
 
     @PutMapping("{id}")

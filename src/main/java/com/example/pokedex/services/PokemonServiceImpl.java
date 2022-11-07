@@ -2,6 +2,7 @@ package com.example.pokedex.services;
 
 import com.example.pokedex.controllers.dtos.request.CreatePokemonRequest;
 import com.example.pokedex.controllers.dtos.request.UpdatePokemonRequest;
+import com.example.pokedex.controllers.dtos.response.BaseResponse;
 import com.example.pokedex.controllers.dtos.response.CreatePokemonResponse;
 import com.example.pokedex.controllers.dtos.response.GetPokemonResponse;
 import com.example.pokedex.controllers.dtos.response.UpdatePokemonResponse;
@@ -9,6 +10,7 @@ import com.example.pokedex.entities.Pokemon;
 import com.example.pokedex.repositories.IPokemonRepository;
 import com.example.pokedex.services.interfaces.IPokemonService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -27,14 +29,13 @@ public class PokemonServiceImpl implements IPokemonService {
     }
 
     @Override
-    public CreatePokemonResponse create(CreatePokemonRequest request) {
-        Pokemon pokemon= new Pokemon();
-        pokemon.setName(request.getName());
-        pokemon.setSpecies(request.getSpecies());
-        pokemon.setType(request.getType());
-        pokemon.setImage(request.getName());
-        repository.save(pokemon);
-        return to(pokemon);
+    public BaseResponse create(CreatePokemonRequest request) {
+        Pokemon pokemon= to(request);
+        return BaseResponse.builder()
+                .data(from(repository.save(pokemon)))
+                .message("pokemon created correctly")
+                .success(Boolean.TRUE)
+                .httpStatus(HttpStatus.CREATED).build();
     }
 
     @Override
@@ -58,14 +59,13 @@ public class PokemonServiceImpl implements IPokemonService {
         repository.deleteById(id);
     }
 
-    public CreatePokemonResponse to(Pokemon pokemon) {
-        CreatePokemonResponse response = new CreatePokemonResponse();
-        response.setId(pokemon.getId());
-        response.setName(pokemon.getName());
-        response.setSpecies(pokemon.getSpecies());
-        response.setType(pokemon.getType());
-        response.setImage(pokemon.getImage());
-        return response;
+    public Pokemon to(CreatePokemonRequest request) {
+        Pokemon pokemon = new Pokemon();
+        pokemon.setName(request.getName());
+        pokemon.setSpecies(request.getSpecies());
+        pokemon.setType(request.getType());
+        pokemon.setImage(request.getImage());
+        return pokemon;
     }
 
     public GetPokemonResponse from(Pokemon pokemon) {

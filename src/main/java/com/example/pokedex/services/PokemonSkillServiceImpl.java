@@ -1,5 +1,6 @@
 package com.example.pokedex.services;
 
+import com.example.pokedex.controllers.dtos.response.BaseResponse;
 import com.example.pokedex.controllers.dtos.response.PokemonResponse;
 import com.example.pokedex.controllers.dtos.response.SkillResponse;
 import com.example.pokedex.entities.projections.PokemonProjections;
@@ -7,6 +8,7 @@ import com.example.pokedex.entities.projections.SkillProjections;
 import com.example.pokedex.repositories.IPokemonSkillRepository;
 import com.example.pokedex.services.interfaces.IPokemonSkillService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -18,14 +20,27 @@ public class PokemonSkillServiceImpl implements IPokemonSkillService {
     private IPokemonSkillRepository repository;
 
     @Override
-    public List<SkillResponse> listAllSkillsByPokemonId(Long pokemonId) {
+    public BaseResponse listAllSkillsByPokemonId(Long pokemonId) {
         List<SkillProjections> skills = repository.listAllSkillsByPokemonId(pokemonId);
-        return skills.stream().map(this::from).collect(Collectors.toList());
+        List<SkillResponse> response = skills.stream()
+                .map(this::from)
+                .collect(Collectors.toList());
+
+        return BaseResponse.builder()
+                .data(response)
+                .message("Skills list by pokemon Id")
+                .success(Boolean.TRUE)
+                .httpStatus(HttpStatus.OK).build();
     }
 
-    public List<PokemonResponse> listAllPokemonBySkillsId(Long skillId) {
+    public BaseResponse listAllPokemonBySkillsId(Long skillId) {
         List<PokemonProjections> pokemons = repository.listAllPokemonBySkillsId(skillId);
-        return pokemons.stream().map(this::from).collect(Collectors.toList());
+        List<PokemonResponse> response = pokemons.stream().map(this::from).collect(Collectors.toList());
+        return BaseResponse.builder()
+                .data(response)
+                .message("Pokemons list by skill Id")
+                .success(Boolean.TRUE)
+                .httpStatus(HttpStatus.OK).build();
     }
 
     private SkillResponse from (SkillProjections skills){
@@ -34,7 +49,7 @@ public class PokemonSkillServiceImpl implements IPokemonSkillService {
         response.setName(skills.getName());
         response.setEffect(skills.getEffect());
         response.setType(skills.getType());
-        response.setPokemonName(skills.getPokemonName());
+        response.setPokemonsName(skills.getPokemonsName());
         return response;
     }
 
@@ -43,8 +58,8 @@ public class PokemonSkillServiceImpl implements IPokemonSkillService {
         response.setId(pokemons.getId());
         response.setName(pokemons.getName());
         response.setSpecies(pokemons.getSpecies());
-        response.setColor(pokemons.getColor());
         response.setType(pokemons.getType());
+        response.setImage(pokemons.getImage());
         return response;
     }
 }

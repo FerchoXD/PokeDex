@@ -5,7 +5,7 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class TrainerResponse {
+public class TrainerLeagueResponse {
     private Long id;
 
     private String name;
@@ -14,5 +14,9 @@ public class TrainerResponse {
 
     private String category;
 
-    private String profilePicture;
+    private String image;
+
+    private String leaguesName;
+
+    private String leaguesId;
 }

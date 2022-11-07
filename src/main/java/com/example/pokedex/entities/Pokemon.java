@@ -1,11 +1,11 @@
 package com.example.pokedex.entities;
 
 import com.example.pokedex.entities.pivots.PokemonsSkill;
-import com.example.pokedex.entities.pivots.TrainersPokemon;
 import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
 import java.util.List;
 
 @Entity
@@ -16,13 +16,13 @@ public class Pokemon {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
+    @NotBlank
     private String name;
-
+    @NotBlank
     private String species;
-
+    @NotBlank
     private String type;
-
+    @NotBlank
     private String image;
 
     @OneToOne(mappedBy = "pokemon")
@@ -30,7 +30,4 @@ public class Pokemon {
 
     @OneToMany(mappedBy = "pokemon")
     private List<PokemonsSkill> pokemonsSkills;
-
-    @OneToMany(mappedBy = "pokemon")
-    private List<TrainersPokemon> trainersPokemon;
 }

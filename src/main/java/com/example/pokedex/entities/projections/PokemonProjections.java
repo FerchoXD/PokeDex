@@ -9,6 +9,5 @@ public interface PokemonProjections {
 
     String getType();
 
-    String getColor();
-
+    String getImage();
 }

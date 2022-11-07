@@ -9,9 +9,11 @@ public class GetTrainerResponse {
 
     private String name;
 
+    private String password;
+
     private String age;
 
     private String category;
 
-    private String profilePicture;
+    private String image;
 }

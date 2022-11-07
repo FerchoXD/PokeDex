@@ -5,8 +5,10 @@ import com.example.pokedex.controllers.dtos.request.UpdateCommentRequest;
 import com.example.pokedex.controllers.dtos.response.*;
 import com.example.pokedex.services.interfaces.ICommentService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @RestController
@@ -21,8 +23,9 @@ public class CommentController {
     }
 
     @PostMapping
-    public CreateCommentResponse Create(@RequestBody CreateCommentRequest request){
-        return service.create(request);
+    public ResponseEntity<BaseResponse> Create(@RequestBody @Valid CreateCommentRequest request){
+        BaseResponse baseResponse = service.create(request);
+        return new ResponseEntity<>(baseResponse,baseResponse.getHttpStatus());
     }
 
     @PutMapping("{id}")

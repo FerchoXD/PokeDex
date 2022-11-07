@@ -2,6 +2,7 @@ package com.example.pokedex.services;
 
 import com.example.pokedex.controllers.dtos.request.CreateLeagueRequest;
 import com.example.pokedex.controllers.dtos.request.UpdateLeagueRequest;
+import com.example.pokedex.controllers.dtos.response.BaseResponse;
 import com.example.pokedex.controllers.dtos.response.CreateLeagueResponse;
 import com.example.pokedex.controllers.dtos.response.GetLeagueResponse;
 import com.example.pokedex.controllers.dtos.response.UpdateLeagueResponse;
@@ -9,6 +10,7 @@ import com.example.pokedex.entities.League;
 import com.example.pokedex.repositories.ILeagueRepository;
 import com.example.pokedex.services.interfaces.ILeagueService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -27,12 +29,13 @@ public class LeagueServiceImpl implements ILeagueService {
     }
 
     @Override
-    public CreateLeagueResponse create(CreateLeagueRequest request) {
-        League league = new League();
-        league.setName(request.getName());
-        league.setRegion(request.getRegion());
-        repository.save(league);
-        return to(league);
+    public BaseResponse create(CreateLeagueRequest request) {
+        League league = to(request);
+        return BaseResponse.builder()
+                .data(from(repository.save(league)))
+                .message("league created correctly")
+                .success(Boolean.TRUE)
+                .httpStatus(HttpStatus.CREATED).build();
     }
 
 
@@ -66,12 +69,11 @@ public class LeagueServiceImpl implements ILeagueService {
         return response;
     }
 
-    public CreateLeagueResponse to(League league) {
-        CreateLeagueResponse response = new CreateLeagueResponse();
-        response.setId(league.getId());
-        response.setName(league.getName());
-        response.setRegion(league.getRegion());
-        return response;
+    public League to(CreateLeagueRequest request) {
+        League league = new League();
+        league.setName(request.getName());
+        league.setRegion(request.getRegion());
+        return league;
     }
 
     public UpdateLeagueResponse fromUpdate(League league) {

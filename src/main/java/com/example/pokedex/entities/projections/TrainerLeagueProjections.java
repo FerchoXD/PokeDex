@@ -1,6 +1,6 @@
 package com.example.pokedex.entities.projections;
 
-public interface TrainerProjections {
+public interface TrainerLeagueProjections {
     Long getId();
 
     String getName();
@@ -9,5 +9,9 @@ public interface TrainerProjections {
 
     String getCategory();
 
-    String getProfilePicture();
+    String getImage();
+
+    String getLeaguesName();
+
+    String getLeaguesId();
 }

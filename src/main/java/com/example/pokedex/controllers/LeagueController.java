@@ -2,11 +2,13 @@ package com.example.pokedex.controllers;
 
 import com.example.pokedex.controllers.dtos.request.CreateLeagueRequest;
 import com.example.pokedex.controllers.dtos.request.UpdateLeagueRequest;
+import com.example.pokedex.controllers.dtos.response.BaseResponse;
 import com.example.pokedex.controllers.dtos.response.CreateLeagueResponse;
 import com.example.pokedex.controllers.dtos.response.GetLeagueResponse;
 import com.example.pokedex.controllers.dtos.response.UpdateLeagueResponse;
 import com.example.pokedex.services.LeagueServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -23,8 +25,9 @@ public class LeagueController {
     }
 
     @PostMapping
-    public CreateLeagueResponse Create(@RequestBody CreateLeagueRequest request){
-        return service.create(request);
+    public ResponseEntity<BaseResponse> Create(@RequestBody CreateLeagueRequest request){
+        BaseResponse baseResponse = service.create(request);
+        return new ResponseEntity<>(baseResponse,baseResponse.getHttpStatus());
     }
 
     @PutMapping("{id}")

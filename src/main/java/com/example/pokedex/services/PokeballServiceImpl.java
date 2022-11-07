@@ -5,8 +5,6 @@ import com.example.pokedex.controllers.dtos.request.UpdatePokeballRequest;
 import com.example.pokedex.controllers.dtos.response.*;
 import com.example.pokedex.entities.Pokeball;
 import com.example.pokedex.entities.projections.PokeballProjections;
-import com.example.pokedex.entities.projections.SkillProjections;
-import com.example.pokedex.entities.projections.TrainerProjections;
 import com.example.pokedex.repositories.IPokeballRepository;
 import com.example.pokedex.services.interfaces.IPokeballService;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -3,6 +3,8 @@ package com.example.pokedex.controllers.dtos.response;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.sql.Time;
+
 @Getter
 @Setter
 public class CreateCommentResponse {
@@ -12,5 +14,5 @@ public class CreateCommentResponse {
 
     private String description;
 
-    private String hour;
+    private Time hour;
 }

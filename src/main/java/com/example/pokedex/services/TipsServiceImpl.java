@@ -11,6 +11,7 @@ import com.example.pokedex.entities.projections.TipsProjections;
 import com.example.pokedex.repositories.ITipsRepository;
 import com.example.pokedex.services.interfaces.ITipsService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -28,12 +29,13 @@ public class TipsServiceImpl implements ITipsService {
     }
 
     @Override
-    public CreateTipsResponse create(CreateTipsRequest request) {
-        Tips tips = new Tips();
-        tips.setDescription(request.getDescription());
-        tips.setImage(request.getImage());
-        repository.save(tips);
-        return to(tips);
+    public BaseResponse create(CreateTipsRequest request) {
+        Tips tips = to(request);
+        return BaseResponse.builder()
+                .data(from(repository.save(tips)))
+                .message("tip created correctly")
+                .success(Boolean.TRUE)
+                .httpStatus(HttpStatus.CREATED).build();
     }
 
     @Override
@@ -69,12 +71,11 @@ public class TipsServiceImpl implements ITipsService {
         return response;
     }
 
-    public CreateTipsResponse to(Tips tips) {
-        CreateTipsResponse response = new CreateTipsResponse();
-        response.setId(tips.getId());
-        response.setDescription(tips.getDescription());
-        response.setImage(tips.getImage());
-        return response;
+    public Tips to(CreateTipsRequest request) {
+        Tips tips = new Tips();
+        tips.setDescription(request.getDescription());
+        tips.setImage(request.getImage());
+        return tips;
     }
 
     public GetTipsResponse from(Tips tips) {

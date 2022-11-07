@@ -10,5 +10,5 @@ public interface SkillProjections {
 
     String getType();
 
-    String getPokemonName();
+    String getPokemonsName();
 }

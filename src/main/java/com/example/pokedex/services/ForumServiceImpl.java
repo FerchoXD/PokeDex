@@ -9,6 +9,7 @@ import com.example.pokedex.entities.League;
 import com.example.pokedex.repositories.IForumRepository;
 import com.example.pokedex.services.interfaces.IForumService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -26,13 +27,13 @@ public class ForumServiceImpl implements IForumService {
     }
 
     @Override
-    public CreateForumResponse create(CreateForumRequest request) {
-        Forum forum = new Forum();
-        forum.setTopic(request.getTopic());
-        forum.setHour(request.getHour());
-        forum.setDate(request.getDate());
-        repository.save(forum);
-        return to(forum);
+    public BaseResponse create(CreateForumRequest request) {
+        Forum forum = to(request);
+        return BaseResponse.builder()
+                .data(from(repository.save(forum)))
+                .message("Forum Created correctly")
+                .success(Boolean.TRUE)
+                .httpStatus(HttpStatus.CREATED).build();
     }
 
     @Override
@@ -69,13 +70,12 @@ public class ForumServiceImpl implements IForumService {
         return response;
     }
 
-    public CreateForumResponse to(Forum forum) {
-        CreateForumResponse response = new CreateForumResponse();
-        response.setId(forum.getId());
-        response.setTopic(forum.getTopic());
-        response.setHour(forum.getHour());
-        response.setDate(forum.getDate());
-        return response;
+    private Forum to(CreateForumRequest request) {
+        Forum forum = new Forum();
+        forum.setTopic(request.getTopic());
+        forum.setDate(request.getDate());
+        forum.setHour(request.getHour());
+        return forum;
     }
 
     public UpdateForumResponse fromUpdate(Forum forum) {
@@ -86,6 +86,11 @@ public class ForumServiceImpl implements IForumService {
         response.setDate(forum.getDate());
         return response;
     }
+
+    public Forum save(Forum forum) {
+        return repository.save(forum);
+    }
+
     public Forum find(Long id){
         return  repository.findById(id).orElseThrow(()->new RuntimeException("no se encpontro"));
     }

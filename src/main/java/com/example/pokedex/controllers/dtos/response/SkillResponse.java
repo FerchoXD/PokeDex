@@ -13,5 +13,5 @@ public class SkillResponse {
 
     private String type;
 
-    private String pokemonName;
+    private String pokemonsName;
 }

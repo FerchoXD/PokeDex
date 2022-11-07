@@ -2,11 +2,12 @@ package com.example.pokedex.entities;
 
 import com.example.pokedex.entities.pivots.TrainersForum;
 import com.example.pokedex.entities.pivots.TrainersLeague;
-import com.example.pokedex.entities.pivots.TrainersPokemon;
 import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
 import java.util.List;
 
 @Entity
@@ -16,18 +17,18 @@ public class Trainer {
 
     @Id
     @GeneratedValue (strategy = GenerationType.IDENTITY)
+    @PrimaryKeyJoinColumn
     private Long id;
-
+    @NotBlank
     private String name;
-
+    @NotBlank
+    private String password;
+    @NotBlank
     private String age;
 
     private String category;
-
-    private String profilePicture;
-
-    @OneToMany(mappedBy = "trainer")
-    private List<TrainersPokemon> trainersPokemon;
+    @NotBlank
+    private String image;
 
     @OneToMany(mappedBy = "trainer")
     private List<TrainersLeague> trainersLeague;

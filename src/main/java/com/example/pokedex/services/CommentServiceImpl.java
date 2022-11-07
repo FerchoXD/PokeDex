@@ -3,10 +3,12 @@ package com.example.pokedex.services;
 import com.example.pokedex.controllers.dtos.request.CreateCommentRequest;
 import com.example.pokedex.controllers.dtos.request.UpdateCommentRequest;
 import com.example.pokedex.controllers.dtos.response.*;
+import com.example.pokedex.controllers.exceptions.UpchiapasException;
 import com.example.pokedex.entities.Comment;
 import com.example.pokedex.repositories.ICommentRepository;
 import com.example.pokedex.services.interfaces.ICommentService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -24,13 +26,13 @@ public class CommentServiceImpl implements ICommentService {
     }
 
     @Override
-    public CreateCommentResponse create(CreateCommentRequest request) {
-        Comment comment = new Comment();
-        comment.setHour(request.getHour());
-        comment.setTitle(request.getTitle());
-        comment.setDescription(request.getDescription());
-        repository.save(comment);
-        return to(comment);
+    public BaseResponse create(CreateCommentRequest request) {
+        Comment comment = to(request);
+        return BaseResponse.builder()
+                .data(from(repository.save(comment)))
+                .message("Comment Created correctly")
+                .success(Boolean.TRUE)
+                .httpStatus(HttpStatus.CREATED).build();
     }
 
     @Override
@@ -53,13 +55,12 @@ public class CommentServiceImpl implements ICommentService {
         repository.deleteById(id);
     }
 
-    public CreateCommentResponse to(Comment comment) {
-        CreateCommentResponse response = new CreateCommentResponse();
-        response.setId(comment.getId());
-        response.setHour(comment.getHour());
-        response.setTitle(comment.getTitle());
-        response.setDescription(comment.getDescription());
-        return response;
+    public Comment to(CreateCommentRequest request) {
+        Comment comment = new Comment();
+        comment.setHour(request.getHour());
+        comment.setTitle(request.getTitle());
+        comment.setDescription(request.getDescription());
+        return comment;
     }
 
     public GetCommentResponse from(Comment comment) {
